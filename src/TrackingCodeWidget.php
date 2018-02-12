@@ -9,7 +9,7 @@ use yii\base\InvalidConfigException;
 
 /**
  * Integrate Matomo TrackingCode.
- * 
+ *
  * @property \luya\matomo\admin\Module $module
  *
  * @author Basil Suter <basil@nadar.io>
@@ -17,9 +17,9 @@ use yii\base\InvalidConfigException;
  */
 class TrackingCodeWidget extends Widget
 {
-	/**
-	 * @var integer The given siteId from the piwik interface.
-	 */
+    /**
+     * @var integer The given siteId from the piwik interface.
+     */
     public $siteId;
     
     /**
@@ -47,9 +47,9 @@ class TrackingCodeWidget extends Widget
     
     /**
      * Get the matomo module.
-     * 
+     *
      * Returns the admin module object instance.
-     * 
+     *
      * @return \luya\matomo\admin\Module
      */
     public function getModule()

@@ -11,7 +11,7 @@ use luya\traits\CacheableTrait;
 
 /**
  * Stats API for Matomo Dashboard objects.
- * 
+ *
  * @author Basil Suter <basil@nadar.io>
  * @since 1.0.0
  */
@@ -90,7 +90,7 @@ class StatsController extends RestController
      */
     public function getLastDays()
     {
-    	return $this->callApi(['period' => 'day', 'date' => 'last10', 'format_metrics' => 1, 'period' => 'day']);
+        return $this->callApi(['period' => 'day', 'date' => 'last10', 'format_metrics' => 1, 'period' => 'day']);
     }
     
     /**
@@ -112,7 +112,7 @@ class StatsController extends RestController
         }
         
         return [
-        		'legend' => ['data' => [Module::t('visits_legend_unique'), Module::t('visits_legend_visitors')]],
+                'legend' => ['data' => [Module::t('visits_legend_unique'), Module::t('visits_legend_visitors')]],
                 'xAxis' => ['type' => 'category', 'boundaryGap' => false, 'data' => $days],
                 'yAxis' => ['type' => 'value'],
                 'series' => [
