@@ -27,9 +27,16 @@ class Module extends \luya\admin\base\Module
         [
             'class' => 'luya\admin\dashboard\ChartDashboardObject',
             'dataApiUrl' => 'admin/api-matomo-stats/visits',
-            'title' => 'Website Visitors',
+            'title' => ['matomo', 'visits_dashboard_title'],
         ],
     ];
+    
+    public static function onLoad()
+    {
+    	self::registerTranslation('matomo', static::staticBasePath() . '/messages', [
+    		'matomo' => 'matomo.php',
+    	]);
+    }
     
     public function init()
     {
@@ -47,5 +54,10 @@ class Module extends \luya\admin\base\Module
     public static function ensureServerUrl($url)
     {
         return Url::ensureHttp(rtrim($url, '/'), true);
+    }
+    
+    public static function t($message, array $params = [])
+    {
+    	return parent::baseT('matomo', $message, $params);
     }
 }
