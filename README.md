@@ -13,12 +13,23 @@ In order to add the modules to your project go into the modules section of your 
 ```php
 return [
     'modules' => [
-    	'matomoadmin' => [
-    		'class' => 'luya\matomo\Module',
-    		'serverUrl' => 'https://matomo.example.com', // without trailing slash, use full schema path.
-    		'siteId' => 1,
-    		'apiToken' => 'THE_API_TOKEN',
-    	]
+        'matomoadmin' => [
+            'class' => 'luya\matomo\Module',
+            'serverUrl' => 'https://matomo.example.com', // without trailing slash, use full schema path.
+            'siteId' => 1,
+            'apiToken' => 'THE_API_TOKEN',
+        ]
     ],
 ];
+```
+
+## Usage
+
+After configure the admin module you can now integrate the TrackingCode widget. The tracking code will register the javascript tracking and as fall back also the tracking image between noscript tags.
+
+We reccommend to integrate the TrackingCodeWidget right before the endBody() function in the layout.
+
+```php
+<?= \luya\matomo\TrackingCodeWidget::widget(); ?>
+<?php $this->endBody() ?>
 ```
