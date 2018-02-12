@@ -9,13 +9,12 @@ In order to add the modules to your project go into the modules section of your 
 ```php
 return [
     'modules' => [
-        // ...
-        'matomofrontend' => [
-            'class' => 'app\modules\matomo\frontend\Module',
-            'useAppViewPath' => true, // When enabled the views will be looked up in the @app/views folder, otherwise the views shipped with the module will be used.
-        ],
-        'matomoadmin' => 'app\modules\matomo\admin\Module',
-        // ...
+    	'matomoadmin' => [
+    		'class' => 'luya\matomo\Module',
+    		'serverUrl' => 'https://matomo.example.com',
+    		'siteId' => 1,
+    		'apiToken' => 'THE_API_TOKEN',
+    	]
     ],
 ];
 ```
