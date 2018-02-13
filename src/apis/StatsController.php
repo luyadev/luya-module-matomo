@@ -21,6 +21,7 @@ class StatsController extends RestController
     
     /**
      * Call the piwik API.
+     *
      * @param array $args
      * @throws InvalidCallException
      * @return mixed|NULL
@@ -45,9 +46,11 @@ class StatsController extends RestController
     }
     
     /**
+     * Retrieve json data with visits for last 10 days.
+     *
      * @return array Example response:
      * {"2018-02-03":{
-     * 	"nb_uniq_visitors":37,
+     * "nb_uniq_visitors":37,
      * "nb_visits":45,
      * "nb_users":0,
      * "nb_actions":64,
@@ -86,15 +89,27 @@ class StatsController extends RestController
      * "avg_time_generation":"0.32s",
      * "bounce_rate":"80%",
      * "nb_actions_per_visit":1.399999999999999911182158029987476766109466552734375,
-     * "avg_time_on_site":"3 min 49s"}
+     * "avg_time_on_site":"3 min 49s"
+     * }}
      */
     public function getLastDays()
     {
-        return $this->callApi(['period' => 'day', 'date' => 'last10', 'format_metrics' => 1, 'period' => 'day']);
+        return $this->callApi(['period' => 'day', 'date' => 'last10', 'format_metrics' => 1]);
+    }
+    
+    /**
+     * Retrieve json data with visits for last 10 months.
+     *
+     * @return array
+     */
+    public function getLastMonths()
+    {
+        return $this->callApi(['period' => 'month', 'date' => 'last10', 'format_metrics' => 1]);
     }
     
     /**
      * Returns echarts json structure for last days visits.
+     *
      * @return array
      */
     public function actionVisits()
@@ -112,20 +127,20 @@ class StatsController extends RestController
         }
         
         return [
-                'legend' => ['data' => [Module::t('visits_legend_unique'), Module::t('visits_legend_visitors')]],
-                'xAxis' => ['type' => 'category', 'boundaryGap' => false, 'data' => $days],
-                'yAxis' => ['type' => 'value'],
-                'series' => [
-                    [
-                        'data' => $unique,
-                        'type' => 'line',
-                        'name' => Module::t('visits_legend_unique'),
-                    ], [
-                        'data' => $visits,
-                        'type' => 'line',
-                        'name' => Module::t('visits_legend_visitors'),
-                    ]
+            'legend' => ['data' => [Module::t('visits_legend_unique'), Module::t('visits_legend_visitors')]],
+            'xAxis' => ['type' => 'category', 'boundaryGap' => false, 'data' => $days],
+            'yAxis' => ['type' => 'value'],
+            'series' => [
+                [
+                    'data' => $unique,
+                    'type' => 'line',
+                    'name' => Module::t('visits_legend_unique'),
+                ], [
+                    'data' => $visits,
+                    'type' => 'line',
+                    'name' => Module::t('visits_legend_visitors'),
                 ]
+            ]
         ];
     }
 }

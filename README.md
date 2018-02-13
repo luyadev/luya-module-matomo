@@ -1,6 +1,6 @@
 # Matomo Module
  
-Provide TrackingCode implementation Widget and admin dashboard object to see latest visits.
+Provide TrackingCode implementation Widget and Admin-Dashboard object to see latest visits from Matomo (former Piwik).
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/luyadev/luya-module-matomo/master/matomo.png" alt="LUYA Logo"/>
