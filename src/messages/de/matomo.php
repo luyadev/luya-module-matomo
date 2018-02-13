@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'visits_dashboard_title' => 'Webseiten besucher',
-    'visits_legend_unique' => 'Einmalig',
+    'visits_dashboard_title' => 'Website-Besucher',
+    'visits_legend_unique' => 'Eindeutig',
     'visits_legend_visitors' => 'Besucher',
 ];
