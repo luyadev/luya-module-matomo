@@ -121,6 +121,9 @@ class StatsController extends RestController
         $visits = [];
         
         foreach ($data as $date => $values) {
+        	if (empty($values)) {
+        		continue;
+        	}
             $days[] = strftime("%a", strtotime($date));
             $unique[] = $values['nb_uniq_visitors'];
             $visits[] = $values['nb_visits'];
