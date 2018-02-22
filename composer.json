@@ -1,6 +1,6 @@
 {
 	"name" : "luyadev/luya-module-matomo",
-	"description" : "Matomo (former piwik) analtics",
+	"description" : "Matomo (former piwik) analytics",
 	"type" : "luya-module",
 	"keywords" : ["php", "luya", "module", "matomo", "piwik"],
 	"license": "MIT",
