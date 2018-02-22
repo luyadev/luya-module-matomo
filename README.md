@@ -29,6 +29,10 @@ return [
 ];
 ```
 
+- serverUrl: the URL which points to the Matomo installation
+- siteId: get the site Id in the Matomo dashboard under Settings > Websites > Manage
+- apiToken: get the Matomo API token under Settings > Platform > API > User authentication
+
 ## Usage
 
 After configure the admin module you can now integrate the TrackingCode widget. The tracking code will register the javascript tracking and as fall back also the tracking image between noscript tags.
