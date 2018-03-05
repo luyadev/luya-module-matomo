@@ -20,7 +20,7 @@ Provide TrackingCode implementation Widget and Admin-Dashboard object to see lat
 For the installation of modules Composer is required.
 
 ```sh
-composer require luyadev/luya-module-matomo
+composer require luyadev/luya-module-matomo:~1.0.0
 ```
 
 In order to add the modules to your project go into the modules section of your config:
