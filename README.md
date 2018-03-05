@@ -1,5 +1,14 @@
-# Matomo Module
- 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/luyadev/luya/master/docs/logo/luya-logo-0.2x.png" alt="LUYA Logo"/>
+</p>
+
+# Matomo (Piwik) Module
+
+[![LUYA](https://img.shields.io/badge/Powered%20by-LUYA-brightgreen.svg)](https://luya.io)
+[![Latest Stable Version](https://poser.pugx.org/luyadev/luya-module-matomo/v/stable)](https://packagist.org/packages/luyadev/luya-module-matomo)
+[![Total Downloads](https://poser.pugx.org/luyadev/luya-module-matomo/downloads)](https://packagist.org/packages/luyadev/luya-module-matomo)
+[![Slack Support](https://img.shields.io/badge/Slack-luyadev-yellowgreen.svg)](https://slack.luya.io/)
+
 Provide TrackingCode implementation Widget and Admin-Dashboard object to see latest visits from Matomo (former Piwik).
 
 <p align="center">
