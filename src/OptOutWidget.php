@@ -11,6 +11,15 @@ use luya\helpers\Html;
  * 
  * Generates an iframe where the user can opt out from the tracking system.
  * 
+ * If you are using the OptOutWidget without the configured matomo module you
+ * have to provide the serverUrl property:
+ *
+ * ```php
+ * OptOutWidget::widget([
+ *     'serverUrl' => 'https://luya.io'
+ * ]);
+ * ```
+ * 
  * @author Basil Suter <basil@nadar.io>
  * @since 1.0.1
  */

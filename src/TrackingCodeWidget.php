@@ -7,6 +7,24 @@ use luya\web\View;
 
 /**
  * Integrate Matomo TrackingCode.
+ * 
+ * We recommend you register the TrackindCodeWidget in the footer of the LAYOUT as 
+ * there is an tracking pixel fallback which will be rendered.
+ * 
+ * ```php
+ * <?= \luya\matomo\TrackingCodeWidget::widget(); ?>
+ * <?php $this->endBody() ?>
+ * ```
+ * 
+ * If you are using the tracking code widget without the module, you have to provide the
+ * $siteId and $serverUrl like this
+ * 
+ * ```php
+ * TrackingCodeWidget::widget([
+ *     'siteId' => 1,
+ *     'serverUrl' => 'https://luya.io'
+ * ]);
+ * ```
  *
  * @property \luya\matomo\admin\Module $module
  *

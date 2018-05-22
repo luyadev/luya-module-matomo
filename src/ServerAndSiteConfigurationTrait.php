@@ -8,6 +8,10 @@ use yii\base\InvalidConfigException;
 /**
  * Configuration trait for Widgets.
  * 
+ * As widgets can take the configuration from properties or
+ * the application module configuration this trait helps to
+ * integrate this functionality to the widgets.
+ * 
  * @author Basil Suter <basil@nadar.io>
  * @since 1.0.1
  */
