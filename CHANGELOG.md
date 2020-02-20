@@ -3,7 +3,9 @@
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 In order to read more about upgrading and BC breaks have a look at the [UPGRADE Document](UPGRADE.md).
 
-## 1.0.2 (in progress)
+## 1.0.2 (20. Feb 2020)
+
++ Do not throw exception when Matomo API returns an error.
 
 ## 1.0.1 (22. May 2018)
 

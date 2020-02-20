@@ -4,6 +4,7 @@ namespace luya\matomo\apis;
 
 use luya\admin\base\RestController;
 use Curl\Curl;
+use luya\admin\models\Logger;
 use yii\base\InvalidCallException;
 use luya\helpers\Json;
 use luya\matomo\Module;
@@ -120,10 +121,15 @@ class StatsController extends RestController
         $unique = [];
         $visits = [];
         
+        if (isset($data['result']) && $data['result'] == 'error') {
+            Logger::error("Error while requesting Matomo API: " . $data['message']);
+            return [];
+        }
+
         foreach ($data as $date => $values) {
-        	if (empty($values)) {
+        	if (empty($values) && !isset($values['nb_uniq_visitors'])) {
         		continue;
-        	}
+            }
             $days[] = strftime("%a", strtotime($date));
             $unique[] = $values['nb_uniq_visitors'];
             $visits[] = $values['nb_visits'];
