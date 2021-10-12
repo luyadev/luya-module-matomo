@@ -26,16 +26,15 @@ composer require luyadev/luya-module-matomo
 In order to add the modules to your project go into the modules section of your config:
 
 ```php
-return [
-    'modules' => [
-        'matomoadmin' => [
-            'class' => 'luya\matomo\Module',
-            'serverUrl' => 'https://matomo.example.com', // without trailing slash, use full schema path.
-            'siteId' => 1,
-            'apiToken' => 'THE_API_TOKEN',
-        ]
-    ],
-];
+'modules' => [
+    // ...
+    'matomoadmin' => [
+        'class' => 'luya\matomo\Module',
+         'serverUrl' => 'https://matomo.example.com', // without trailing slash, use full schema path.
+         'siteId' => 1,
+         'apiToken' => 'THE_API_TOKEN',
+    ]
+]
 ```
 
 - serverUrl: the URL which points to the Matomo installation
